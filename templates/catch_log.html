@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Catch Logs | PFZ Predict</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface">
+    <header class="bg-white/95 backdrop-blur-sm border-b border-slate-200 shadow-sm fixed w-full top-0 z-50 h-16 flex items-center px-6">
+        <div class="flex items-center gap-8 w-full">
+            <span class="text-xl font-black text-[#002B49] uppercase tracking-wider">PFZ Predict</span>
+            <nav class="hidden md:flex gap-6">
+                <a class="text-slate-500 font-medium hover:text-[#002B49]" href="{{ url_for('dashboard') }}">Dashboard</a>
+                <a class="text-slate-500 font-medium hover:text-[#002B49]" href="{{ url_for('map_view') }}">Map</a>
+                <a class="text-[#002B49] font-bold border-b-2 border-[#002B49] pb-1" href="{{ url_for('catch_logs') }}">Logs</a>
+                <a class="text-slate-500 font-medium hover:text-[#002B49]" href="{{ url_for('chatbot_view') }}">AI Chat</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="flex pt-16 min-h-screen">
+        <aside class="hidden lg:flex flex-col w-64 border-r border-slate-200 bg-white p-6 sticky top-16 h-[calc(100vh-64px)]">
+            <div class="mb-8">
+                <div class="font-bold text-[#002B49]">{{ current_user.name }}</div>
+                <div class="text-xs text-slate-500">ID: {{ current_user.id[:8] }}</div>
+            </div>
+            <nav class="flex-1 space-y-2">
+                <a href="{{ url_for('dashboard') }}" class="flex items-center gap-3 p-3 text-slate-600 hover:bg-slate-50 rounded-lg">
+                    <span class="material-symbols-outlined">dashboard</span> Dashboard
+                </a>
+                <a href="{{ url_for('map_view') }}" class="flex items-center gap-3 p-3 text-slate-600 hover:bg-slate-50 rounded-lg">
+                    <span class="material-symbols-outlined">explore</span> Map
+                </a>
+                <a href="{{ url_for('catch_logs') }}" class="flex items-center gap-3 p-3 bg-slate-50 text-[#002B49] font-bold rounded-lg">
+                    <span class="material-symbols-outlined">history_edu</span> Catch History
+                </a>
+                <a href="{{ url_for('chatbot_view') }}" class="flex items-center gap-3 p-3 text-slate-600 hover:bg-slate-50 rounded-lg">
+                    <span class="material-symbols-outlined">smart_toy</span> AI Assistant
+                </a>
+            </nav>
+            <a href="{{ url_for('logout') }}" class="mt-auto flex items-center gap-3 p-3 text-red-600 hover:bg-red-50 rounded-lg">
+                <span class="material-symbols-outlined">logout</span> Logout
+            </a>
+        </aside>
+
+        <main class="flex-1 p-8 max-w-6xl mx-auto">
+            <header class="mb-10">
+                <h1 class="text-3xl font-bold text-[#002B49]">Catch Logging</h1>
+                <p class="text-slate-500">Document your harvest for real-time analytics.</p>
+            </header>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <!-- Form Section -->
+                <div class="lg:col-span-5 bg-white p-6 rounded-xl border shadow-sm">
+                    <h2 class="font-bold text-xl mb-6 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-secondary">edit_note</span> New Entry
+                    </h2>
+                    <form id="catch-form" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Fish Species</label>
+                            <select id="fish-type" class="w-full border rounded-lg p-2 focus:ring-2 focus:ring-secondary outline-none">
+                                <option>Yellowfin Tuna</option>
+                                <option>Indian Mackerel</option>
+                                <option>Skipjack Tuna</option>
+                                <option>Sardine</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Quantity (kg)</label>
+                            <input id="quantity" type="number" step="0.1" class="w-full border rounded-lg p-2" placeholder="0.0"/>
+                        </div>
+                        <div class="grid grid-cols-2 gap-2">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Lat</label>
+                                <input id="lat" type="number" step="0.0001" class="w-full border rounded-lg p-2" placeholder="0.0000"/>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Lon</label>
+                                <input id="lon" type="number" step="0.0001" class="w-full border rounded-lg p-2" placeholder="0.0000"/>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 uppercase mb-1">Location Name</label>
+                            <input id="location" type="text" class="w-full border rounded-lg p-2" placeholder="e.g. Zone A-12"/>
+                        </div>
+                        <button type="submit" class="w-full bg-primary text-white py-3 rounded-lg font-bold hover:bg-primary-container transition-all">
+                            Submit Log Entry
+                        </button>
+                    </form>
+                </div>
+
+                <!-- History Section -->
+                <div class="lg:col-span-7 space-y-4">
+                    <h2 class="font-bold text-xl flex items-center gap-2">
+                        <span class="material-symbols-outlined text-secondary">history</span> Recent Logs
+                    </h2>
+                    <div id="logs-container" class="space-y-4">
+                        {% for log in logs %}
+                        <div class="bg-white p-4 rounded-xl border shadow-sm flex justify-between items-center">
+                            <div>
+                                <div class="font-bold text-primary">{{ log.fish_type }}</div>
+                                <div class="text-xs text-slate-500">{{ log.timestamp }} | {{ log.location }} ({% if log.lat %}{{ log.lat|round(2) }}, {{ log.lon|round(2) }}{% endif %})</div>
+                            </div>
+                            <div class="text-right">
+                                <div class="font-bold text-lg text-secondary">{{ log.quantity }} kg</div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Try to auto-fill location
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(pos => {
+                document.getElementById('lat').value = pos.coords.latitude;
+                document.getElementById('lon').value = pos.coords.longitude;
+            });
+        }
+
+        document.getElementById('catch-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const data = {
+                fish_type: document.getElementById('fish-type').value,
+                quantity: document.getElementById('quantity').value,
+                lat: document.getElementById('lat').value,
+                lon: document.getElementById('lon').value,
+                location: document.getElementById('location').value,
+                timestamp: new Date().toLocaleString()
+            };
+
+            fetch('/api/add_catch', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            })
+            .then(res => res.json())
+            .then(res => {
+                if(res.status === 'success') {
+                    location.reload();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

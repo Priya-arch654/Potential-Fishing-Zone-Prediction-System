@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Work+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary": "#2c0800",
+                    "on-tertiary-fixed": "#380c00",
+                    "on-primary-container": "#7293b6",
+                    "tertiary-fixed": "#ffdbcf",
+                    "primary-fixed-dim": "#a8caef",
+                    "on-tertiary-fixed-variant": "#822800",
+                    "surface-container-highest": "#e0e3e5",
+                    "secondary-container": "#76f3ea",
+                    "surface-container-lowest": "#ffffff",
+                    "surface": "#f7f9fb",
+                    "surface-bright": "#f7f9fb",
+                    "on-tertiary-container": "#e66c3f",
+                    "error-container": "#ffdad6",
+                    "surface-container-low": "#f2f4f6",
+                    "secondary": "#006a65",
+                    "surface-variant": "#e0e3e5",
+                    "on-secondary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "primary": "#001629",
+                    "outline-variant": "#c3c7ce",
+                    "tertiary-container": "#4f1500",
+                    "surface-dim": "#d8dadc",
+                    "error": "#ba1a1a",
+                    "on-secondary-container": "#006f69",
+                    "on-surface-variant": "#42474d",
+                    "outline": "#73777e",
+                    "secondary-fixed-dim": "#59dad1",
+                    "surface-tint": "#406182",
+                    "on-error-container": "#93000a",
+                    "on-secondary-fixed-variant": "#00504c",
+                    "on-tertiary": "#ffffff",
+                    "inverse-primary": "#a8caef",
+                    "on-background": "#191c1e",
+                    "surface-container": "#eceef0",
+                    "on-surface": "#191c1e",
+                    "primary-container": "#002b49",
+                    "inverse-on-surface": "#eff1f3",
+                    "secondary-fixed": "#79f6ed",
+                    "inverse-surface": "#2d3133",
+                    "on-secondary-fixed": "#00201e",
+                    "tertiary-fixed-dim": "#ffb59c",
+                    "primary-fixed": "#cfe5ff",
+                    "surface-container-high": "#e6e8ea",
+                    "on-primary-fixed-variant": "#274969",
+                    "on-error": "#ffffff",
+                    "on-primary-fixed": "#001d34",
+                    "background": "#f7f9fb"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "20px",
+                    "margin": "24px",
+                    "xs": "8px",
+                    "sm": "16px",
+                    "md": "24px",
+                    "lg": "32px",
+                    "base": "4px",
+                    "xl": "48px"
+            },
+            "fontFamily": {
+                    "title-sm": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "body-md": ["Inter"],
+                    "data-mono": ["Work Sans"],
+                    "label-bold": ["Work Sans"],
+                    "body-sm": ["Inter"],
+                    "display-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "title-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "data-mono": ["14px", {"lineHeight": "20px", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                    "label-bold": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #f7f9fb;
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-surface">
+<!-- TopAppBar -->
+<header class="bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm fixed top-0 z-40 w-full flex justify-between items-center px-6 h-16 border-b border-slate-200 dark:border-slate-800 shadow-[0_4px_15px_rgba(0,43,73,0.06)] font-['Inter'] antialiased tracking-tight">
+<div class="flex items-center gap-8">
+<span class="text-xl font-black text-[#002B49] dark:text-white uppercase tracking-wider">PFZ Predict</span>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-[#002B49] dark:hover:text-sky-300 transition-all active:scale-95 duration-200" href="#">Dashboard</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-[#002B49] dark:hover:text-sky-300 transition-all active:scale-95 duration-200" href="#">Map</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-[#002B49] dark:hover:text-sky-300 transition-all active:scale-95 duration-200" href="#">Logs</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+<input class="bg-surface-container-low border-none rounded-full py-2 pl-10 pr-4 text-sm focus:ring-2 focus:ring-secondary focus:outline-none w-64" placeholder="Search species..." type="text"/>
+</div>
+<button class="material-symbols-outlined text-slate-600 dark:text-slate-300 active:scale-95 duration-200">notifications</button>
+<button class="material-symbols-outlined text-slate-600 dark:text-slate-300 active:scale-95 duration-200">settings</button>
+<div class="h-8 w-8 rounded-full bg-primary-container overflow-hidden border border-slate-200">
+<img alt="User profile" class="h-full w-full object-cover" data-alt="close-up portrait of a professional fisherman in marine gear, cinematic lighting, nautical background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBc-XEygxpPHIXS6bM7JyzbWTBfi9xxEUOKoPKuTgRWGh8zl86YkPEHMyxqzXFyMId3TBVpfigPY7ZLf8l2gn3wRZ4avMmQu_dMPOT9PVx6FZnQvXqABTHND_ttD82sPl3eo85wFO62ao9gbRE5YQit2Aez2SLL1jbBaAWujLED7DC7QlEF1-bCexDaBQgdkFA2QXwY-tNqf2UfSdDLJylBB0CCNqgyU2m2NIYj9MYq9bDcZ8XWYFkqzOQucIo_p0ylvKYDD5vN"/>
+</div>
+</div>
+</header>
+<div class="flex pt-16 min-h-screen">
+<!-- SideNavBar -->
+<aside class="hidden lg:flex flex-col h-[calc(100vh-64px)] w-64 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 sticky top-16 py-6 font-['Inter'] text-sm">
+<div class="px-6 mb-8">
+<div class="flex items-center gap-3 mb-1">
+<span class="material-symbols-outlined text-[#002B49] dark:text-sky-400">directions_boat</span>
+<span class="text-lg font-bold text-[#002B49] dark:text-white">Mariner Pro</span>
+</div>
+<p class="text-xs text-slate-500 uppercase tracking-widest">Vessel ID: 8829-X</p>
+</div>
+<nav class="flex-1 px-3 space-y-1">
+<a class="flex items-center gap-3 px-3 py-3 text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:pl-5 transition-all duration-300 rounded-lg group" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:pl-5 transition-all duration-300 rounded-lg group" href="#">
+<span class="material-symbols-outlined">explore</span>
+<span class="font-medium">Fishing Map</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 bg-slate-50 dark:bg-slate-800 text-[#002B49] dark:text-sky-300 border-r-4 border-[#002B49] rounded-r-none font-semibold group" href="#">
+<span class="material-symbols-outlined">set_meal</span>
+<span class="font-medium">Species Data</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:pl-5 transition-all duration-300 rounded-lg group" href="#">
+<span class="material-symbols-outlined">history_edu</span>
+<span class="font-medium">Catch History</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-3 text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:pl-5 transition-all duration-300 rounded-lg group" href="#">
+<span class="material-symbols-outlined">smart_toy</span>
+<span class="font-medium">AI Chatbot</span>
+</a>
+</nav>
+<div class="mt-auto px-6 space-y-4">
+<button class="w-full bg-primary-container text-white py-3 rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-sm">add</span>
+                    New Catch Log
+                </button>
+<div class="pt-6 border-t border-slate-100 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-400 hover:text-slate-600 transition-colors" href="#">
+<span class="material-symbols-outlined">help</span>
+<span>Support</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-400 hover:text-error transition-colors" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span>Logout</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 p-margin lg:p-lg overflow-y-auto bg-surface">
+<!-- Header Section -->
+<div class="mb-lg">
+<h1 class="font-display-lg text-display-lg text-primary mb-xs">Species Intelligence</h1>
+<p class="font-body-md text-on-surface-variant max-w-2xl">Real-time oceanographic data and predictive insights for premium species targeting. Optimal fishing zones calculated via Sea Surface Temperature (SST) and chlorophyll analysis.</p>
+</div>
+<!-- Dashboard Statistics / Filter Chips -->
+<div class="flex flex-wrap gap-sm mb-lg">
+<div class="bg-secondary-container text-on-secondary-container px-4 py-2 rounded-full font-label-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">waves</span>
+                    Condition: Optimal
+                </div>
+<div class="bg-surface-container-high text-on-surface-variant px-4 py-2 rounded-full font-label-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">filter_list</span>
+                    Filter: Pelagic
+                </div>
+<div class="bg-surface-container-high text-on-surface-variant px-4 py-2 rounded-full font-label-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+                    Trend: High Yield
+                </div>
+</div>
+<!-- Bento-Style Species Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-md">
+<!-- Card: Tuna -->
+<article class="bg-white rounded-xl shadow-[0_4px_15px_rgba(0,43,73,0.06)] border border-transparent hover:border-secondary-fixed transition-all group overflow-hidden flex flex-col h-full">
+<div class="h-56 relative overflow-hidden">
+<img alt="Tuna" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="majestic yellowfin tuna swimming in deep sapphire blue water with sunlight rays piercing the surface, high contrast, underwater photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrArmu7MLGQqmimx8Zs_8NP2a_zpZxnNReT93S7ZgQSxaVcQQRx7HU4nCkPIlbDt110B2cMz5kUIOWZPjvweiOiOcZCW-pdOO4W1ObWMzVZ4w7mmuQw_yNsA9mxgh-ZthaDXMvkxZlhwM2jmtQBjIf_FfWrwZrrqwtB5I2AKPL1pEpPZc2PaCfeXbUdKAiUGsN5FjkjYcQlRDYs8F8ceNdhokYleIsYCUcKp3xiTsvHX8MFZoqZtNtCTz8j5fILlM9vvMxSShH"/>
+<div class="absolute top-4 right-4 bg-primary/80 backdrop-blur-md text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest">Premium</div>
+</div>
+<div class="p-md flex flex-col flex-1">
+<div class="flex justify-between items-start mb-sm">
+<h2 class="font-headline-md text-headline-md text-primary">Bluefin Tuna</h2>
+<span class="bg-error-container text-on-error-container text-[10px] px-2 py-0.5 rounded font-bold uppercase">Critical Yield</span>
+</div>
+<div class="grid grid-cols-2 gap-sm mb-md">
+<div class="bg-surface-container-low p-sm rounded-lg">
+<p class="text-[10px] text-slate-500 font-bold uppercase mb-1">Temp Range</p>
+<p class="font-data-mono text-primary text-body-md">18°C — 24°C</p>
+</div>
+<div class="bg-surface-container-low p-sm rounded-lg">
+<p class="text-[10px] text-slate-500 font-bold uppercase mb-1">Best Time</p>
+<p class="font-data-mono text-primary text-body-md">05:00 — 09:00</p>
+</div>
+</div>
+<div class="mt-auto pt-sm border-t border-slate-100 flex items-center justify-between">
+<div class="flex gap-1">
+<span class="material-symbols-outlined text-secondary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-slate-200 text-base">star</span>
+</div>
+<button class="text-secondary font-label-bold hover:underline flex items-center gap-1">
+                                VIEW ANALYTICS <span class="material-symbols-outlined text-xs">arrow_forward</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Card: Sardine -->
+<article class="bg-white rounded-xl shadow-[0_4px_15px_rgba(0,43,73,0.06)] border border-transparent hover:border-secondary-fixed transition-all group overflow-hidden flex flex-col h-full">
+<div class="h-56 relative overflow-hidden">
+<img alt="Sardine" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="large school of silver sardines swirling in a bait ball formation, turquoise coastal water, dynamic movement, bright natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZLzBM3WiooLNgVI4H1sBs3h-_jUpaganrimra5ybY-RL7nQESFoPrVZDUntet_rv0zXfMyIn-cO-pAMa051eZ66R98EfO07JCl7DPD8TI2FSIEGI1BDJTUuoVz68cYVXr2UB0sr_4BXnuLFZlOqN9uiJPBRGi21TfmLUy9Ww240dFXSp80LgjjZrXIYQ4RUebidzoD2_3PcPaSbN1G5mjNJ9vr_oMQnU5RzMoo9AHpXIg-JwnnJjYtQ6jdWUfFNHw3NBJUZmt"/>
+<div class="absolute top-4 right-4 bg-secondary/80 backdrop-blur-md text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest">Baitfish</div>
+</div>
+<div class="p-md flex flex-col flex-1">
+<div class="flex justify-between items-start mb-sm">
+<h2 class="font-headline-md text-headline-md text-primary">Pacific Sardine</h2>
+<span class="bg-secondary-container text-on-secondary-container text-[10px] px-2 py-0.5 rounded font-bold uppercase">High Yield</span>
+</div>
+<div class="grid grid-cols-2 gap-sm mb-md">
+<div class="bg-surface-container-low p-sm rounded-lg">
+<p class="text-[10px] text-slate-500 font-bold uppercase mb-1">Temp Range</p>
+<p class="font-data-mono text-primary text-body-md">14°C — 20°C</p>
+</div>
+<div class="bg-surface-container-low p-sm rounded-lg">
+<p class="text-[10px] text-slate-500 font-bold uppercase mb-1">Best Time</p>
+<p class="font-data-mono text-primary text-body-md">20:00 — 02:00</p>
+</div>
+</div>
+<div class="mt-auto pt-sm border-t border-slate-100 flex items-center justify-between">
+<div class="flex gap-1">
+<span class="material-symbols-outlined text-secondary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-slate-200 text-base">star</span>
+<span class="material-symbols-outlined text-slate-200 text-base">star</span>
+</div>
+<button class="text-secondary font-label-bold hover:underline flex items-center gap-1">
+                                VIEW ANALYTICS <span class="material-symbols-outlined text-xs">arrow_forward</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Card: Mackerel -->
+<article class="bg-white rounded-xl shadow-[0_4px_15px_rgba(0,43,73,0.06)] border border-transparent hover:border-secondary-fixed transition-all group overflow-hidden flex flex-col h-full">
+<div class="h-56 relative overflow-hidden">
+<img alt="Mackerel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="close-up of fresh mackerel with iridescent silver and green striped skin, professional studio lighting on neutral background, high detail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWfc9rnQfrXLuUPueehXcUGCBlVrRvxQga9n7axZHzA0Qns_3cpGqsst5MwY2QUlW69-86yYBL6-D9HnLhJV2-lWPCe1pyHnBra7tSGKlKo4ukGCJzjP-zmX8FZ3LRO10B7IBCe5JS-g7rCUPq8gYIthktQcsl-e1KLfCB3FQsdDxmaP3YCegOL3HtCin2JuEgO2cCiopWEsSs9ygnohuDGbKpBlY6inYKwNIeIl9JzoLnAcDmnK4zU6qfNQWaIoBKg2b6IIN6"/>
+<div class="absolute top-4 right-4 bg-tertiary-container/80 backdrop-blur-md text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest">Active</div>
+</div>
+<div class="p-md flex flex-col flex-1">
+<div class="flex justify-between items-start mb-sm">
+<h2 class="font-headline-md text-headline-md text-primary">King Mackerel</h2>
+<span class="bg-surface-container-highest text-on-surface-variant text-[10px] px-2 py-0.5 rounded font-bold uppercase">Moderate</span>
+</div>
+<div class="grid grid-cols-2 gap-sm mb-md">
+<div class="bg-surface-container-low p-sm rounded-lg">
+<p class="text-[10px] text-slate-500 font-bold uppercase mb-1">Temp Range</p>
+<p class="font-data-mono text-primary text-body-md">20°C — 26°C</p>
+</div>
+<div class="bg-surface-container-low p-sm rounded-lg">
+<p class="text-[10px] text-slate-500 font-bold uppercase mb-1">Best Time</p>
+<p class="font-data-mono text-primary text-body-md">06:00 — 10:00</p>
+</div>
+</div>
+<div class="mt-auto pt-sm border-t border-slate-100 flex items-center justify-between">
+<div class="flex gap-1">
+<span class="material-symbols-outlined text-secondary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<button class="text-secondary font-label-bold hover:underline flex items-center gap-1">
+                                VIEW ANALYTICS <span class="material-symbols-outlined text-xs">arrow_forward</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Data Analysis Card (Asymmetric Layout) -->
+<article class="xl:col-span-2 bg-primary-container text-white rounded-xl shadow-xl p-lg flex flex-col md:flex-row gap-lg items-center">
+<div class="flex-1">
+<div class="flex items-center gap-2 text-sky-400 mb-2">
+<span class="material-symbols-outlined">auto_graph</span>
+<span class="font-label-bold uppercase">AI Forecast</span>
+</div>
+<h2 class="font-display-lg text-display-lg mb-sm">Predictive Migration Path</h2>
+<p class="text-on-primary-container text-body-md mb-md">Our neural network predicts a 15% increase in Albacore density near the shelf break over the next 48 hours based on current thermal eddies.</p>
+<div class="flex gap-4">
+<button class="bg-secondary text-white px-6 py-2.5 rounded-lg font-label-bold active:scale-95 transition-transform">Download Report</button>
+<button class="border border-on-primary-container text-on-primary-container px-6 py-2.5 rounded-lg font-label-bold hover:bg-white/10 active:scale-95 transition-transform">Live Map View</button>
+</div>
+</div>
+<div class="w-full md:w-64 bg-white/5 backdrop-blur-sm rounded-xl p-md border border-white/10">
+<div class="flex justify-between items-center mb-4">
+<span class="text-xs font-bold opacity-60">SST TREND</span>
+<span class="text-sky-400 font-data-mono text-xs">+0.4°C / hr</span>
+</div>
+<div class="space-y-4">
+<div class="h-1 bg-white/10 rounded-full overflow-hidden">
+<div class="h-full bg-sky-400 w-3/4"></div>
+</div>
+<div class="h-1 bg-white/10 rounded-full overflow-hidden">
+<div class="h-full bg-secondary-fixed-dim w-1/2"></div>
+</div>
+<div class="h-1 bg-white/10 rounded-full overflow-hidden">
+<div class="h-full bg-error w-1/4"></div>
+</div>
+</div>
+<p class="text-[10px] mt-6 opacity-40 leading-relaxed font-data-mono uppercase">Deep Current Velocity: 1.2kts NW</p>
+</div>
+</article>
+<!-- Species Map Insight Card -->
+<article class="bg-white rounded-xl shadow-[0_4px_15px_rgba(0,43,73,0.06)] border border-transparent p-md flex flex-col h-full">
+<div class="h-32 bg-slate-100 rounded-lg mb-md relative overflow-hidden">
+<img alt="Ocean Map" class="w-full h-full object-cover" data-alt="satellite imagery of ocean currents showing swirling thermal patterns in shades of deep blue and vibrant cyan" data-location="Pacific Ocean" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsiqn3r4HqJlljIohKAEMsYWfNre32DjrlX6J7QyYJRx7BsaNq6U3oXnF9BGWki7lXk64mhMx0XtvzccVIvv2XKXC9KUMNOlH2Rlikj9S_y0kKWhBTrzV7kgCgFp_vKaWmtRYg5Djbc5CtrT8ycYr3FMhdkwPWff0gljGHtOltFv9e4bwD0ySsJPZFGRYmnA4o45a6DGJEaqOjJYDwbk1Bak3sS0VN9rOb89IR7lWd_UgUhqW39606yJclATvLpsnbpUgoHe9n"/>
+<div class="absolute inset-0 bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-4xl">location_on</span>
+</div>
+</div>
+<h3 class="font-title-sm text-title-sm text-primary mb-2">Regional Hotspots</h3>
+<p class="text-body-sm text-on-surface-variant mb-md">Active feeding grounds detected in sector 7-G. Multiple vessel logs reporting high strike rates.</p>
+<div class="mt-auto">
+<div class="bg-surface-container-low px-3 py-2 rounded flex items-center justify-between">
+<span class="text-xs font-bold text-slate-500">SECTOR 7-G</span>
+<span class="text-secondary font-data-mono font-bold">92% CONF.</span>
+</div>
+</div>
+</article>
+</div>
+<div class="h-24"></div> <!-- Bottom Spacer -->
+</main>
+</div>
+<!-- BottomNavBar -->
+<nav class="lg:hidden fixed bottom-0 w-full rounded-t-2xl z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-lg flex justify-around items-center px-4 pb-safe pt-2 h-20 border-t border-slate-100 dark:border-slate-800 shadow-[0_-4px_20px_rgba(0,0,0,0.1)] touch-none transition-transform">
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 opacity-70 active:bg-slate-100 dark:active:bg-slate-800" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[10px] font-bold uppercase mt-1">Dash</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 opacity-70 active:bg-slate-100 dark:active:bg-slate-800" href="#">
+<span class="material-symbols-outlined">map</span>
+<span class="text-[10px] font-bold uppercase mt-1">Map</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#002B49] dark:text-sky-400 scale-110 active:bg-slate-100 dark:active:bg-slate-800" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">list_alt</span>
+<span class="text-[10px] font-bold uppercase mt-1">Logs</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 opacity-70 active:bg-slate-100 dark:active:bg-slate-800" href="#">
+<span class="material-symbols-outlined">psychology</span>
+<span class="text-[10px] font-bold uppercase mt-1">AI</span>
+</a>
+</nav>
+</body></html>

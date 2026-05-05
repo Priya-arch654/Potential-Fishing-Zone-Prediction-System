@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Work+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary": "#2c0800",
+                        "on-tertiary-fixed": "#380c00",
+                        "on-primary-container": "#7293b6",
+                        "tertiary-fixed": "#ffdbcf",
+                        "primary-fixed-dim": "#a8caef",
+                        "on-tertiary-fixed-variant": "#822800",
+                        "surface-container-highest": "#e0e3e5",
+                        "secondary-container": "#76f3ea",
+                        "surface-container-lowest": "#ffffff",
+                        "surface": "#f7f9fb",
+                        "surface-bright": "#f7f9fb",
+                        "on-tertiary-container": "#e66c3f",
+                        "error-container": "#ffdad6",
+                        "surface-container-low": "#f2f4f6",
+                        "secondary": "#006a65",
+                        "surface-variant": "#e0e3e5",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "primary": "#001629",
+                        "outline-variant": "#c3c7ce",
+                        "tertiary-container": "#4f1500",
+                        "surface-dim": "#d8dadc",
+                        "error": "#ba1a1a",
+                        "on-secondary-container": "#006f69",
+                        "on-surface-variant": "#42474d",
+                        "outline": "#73777e",
+                        "secondary-fixed-dim": "#59dad1",
+                        "surface-tint": "#406182",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#00504c",
+                        "on-tertiary": "#ffffff",
+                        "inverse-primary": "#a8caef",
+                        "on-background": "#191c1e",
+                        "surface-container": "#eceef0",
+                        "on-surface": "#191c1e",
+                        "primary-container": "#002b49",
+                        "inverse-on-surface": "#eff1f3",
+                        "secondary-fixed": "#79f6ed",
+                        "inverse-surface": "#2d3133",
+                        "on-secondary-fixed": "#00201e",
+                        "tertiary-fixed-dim": "#ffb59c",
+                        "primary-fixed": "#cfe5ff",
+                        "surface-container-high": "#e6e8ea",
+                        "on-primary-fixed-variant": "#274969",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed": "#001d34",
+                        "background": "#f7f9fb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "20px",
+                        "margin": "24px",
+                        "xs": "8px",
+                        "sm": "16px",
+                        "md": "24px",
+                        "lg": "32px",
+                        "base": "4px",
+                        "xl": "48px"
+                    },
+                    "fontFamily": {
+                        "title-sm": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "data-mono": ["Work Sans"],
+                        "label-bold": ["Work Sans"],
+                        "body-sm": ["Inter"],
+                        "display-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "title-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "data-mono": ["14px", {"lineHeight": "20px", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                        "label-bold": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #f7f9fb;
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-surface">
+<!-- TopAppBar -->
+<header class="bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm docked full-width top-0 z-40 border-b border-slate-200 dark:border-slate-800 shadow-[0_4px_15px_rgba(0,43,73,0.06)] fixed w-full">
+<div class="flex justify-between items-center w-full px-6 h-16">
+<div class="flex items-center gap-8">
+<span class="text-xl font-black text-[#002B49] dark:text-white uppercase tracking-wider font-['Inter'] antialiased tracking-tight">PFZ Predict</span>
+<nav class="hidden md:flex gap-6">
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-[#002B49] dark:hover:text-sky-300 transition-all active:scale-95 duration-200" href="#">Dashboard</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-[#002B49] dark:hover:text-sky-300 transition-all active:scale-95 duration-200" href="#">Map</a>
+<a class="text-[#002B49] dark:text-sky-300 font-bold border-b-2 border-[#002B49] pb-1 hover:text-[#002B49] dark:hover:text-sky-300 transition-all active:scale-95 duration-200" href="#">Logs</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-slate-500 hover:text-primary-container transition-all">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-slate-500 hover:text-primary-container transition-all">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="h-8 w-8 rounded-full bg-primary-container overflow-hidden">
+<img alt="User profile" class="h-full w-full object-cover" data-alt="professional portrait of a sea captain with weathered skin and a nautical cap looking into the distance" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTMmbgBapTSG0Nnl2OgSNnkuf_itPz9bSUjlXSYa0QEs-3XUPaiBfdHQS9LY1SwEaA6VdmCl5W6kDNjS8mwtpZkG_XI4fQdv2Uim5q2dRag3wjc4pKj2aC6tKBCbTQRs7gky5aWiQfTjNRmY-sBx_LrhMtWDQBWr8RzPDjr7z3bqDMR3eLfMxDN_HPtbdOqr1YthfwFrm7i9FsnnCaiQUby95B5Gfucvjw2V3ZyBPORBUXzG8cdF9A5P5q0XyXbOH-Fxz1OjVW"/>
+</div>
+</div>
+</div>
+</header>
+<div class="flex pt-16 min-h-screen">
+<!-- SideNavBar -->
+<aside class="hidden lg:flex flex-col h-full py-6 bg-white dark:bg-slate-900 h-screen w-64 border-r border-slate-200 dark:border-slate-800 shadow-xl dark:shadow-none sticky top-16">
+<div class="px-6 mb-8">
+<div class="flex items-center gap-3 mb-2">
+<div class="h-10 w-10 rounded-lg bg-primary-container flex items-center justify-center text-white">
+<span class="material-symbols-outlined" data-icon="anchor">anchor</span>
+</div>
+<div>
+<div class="text-lg font-bold text-[#002B49] dark:text-white font-['Inter'] text-sm">Mariner Pro</div>
+<div class="text-xs text-slate-500 font-['Inter']">Vessel ID: 8829-X</div>
+</div>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-1">
+<div class="text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:pl-2 transition-all duration-300 cursor-pointer ease-in-out px-4 py-3 flex items-center gap-3">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-['Inter'] text-sm">Dashboard</span>
+</div>
+<div class="text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:pl-2 transition-all duration-300 cursor-pointer ease-in-out px-4 py-3 flex items-center gap-3">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+<span class="font-['Inter'] text-sm">Fishing Map</span>
+</div>
+<div class="text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:pl-2 transition-all duration-300 cursor-pointer ease-in-out px-4 py-3 flex items-center gap-3">
+<span class="material-symbols-outlined" data-icon="set_meal">set_meal</span>
+<span class="font-['Inter'] text-sm">Species Data</span>
+</div>
+<div class="bg-slate-50 dark:bg-slate-800 text-[#002B49] dark:text-sky-300 border-r-4 border-[#002B49] rounded-r-none font-semibold hover:pl-2 transition-all duration-300 cursor-pointer ease-in-out px-4 py-3 flex items-center gap-3">
+<span class="material-symbols-outlined" data-icon="history_edu">history_edu</span>
+<span class="font-['Inter'] text-sm">Catch History</span>
+</div>
+<div class="text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:pl-2 transition-all duration-300 cursor-pointer ease-in-out px-4 py-3 flex items-center gap-3">
+<span class="material-symbols-outlined" data-icon="smart_toy">smart_toy</span>
+<span class="font-['Inter'] text-sm">AI Chatbot</span>
+</div>
+</nav>
+<div class="px-6 mt-auto space-y-4">
+<button class="w-full bg-[#002B49] text-white py-3 rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+                    New Catch Log
+                </button>
+<div class="pt-6 border-t border-slate-100">
+<div class="text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:pl-2 transition-all duration-300 cursor-pointer ease-in-out px-4 py-2 flex items-center gap-3">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span class="font-['Inter'] text-sm">Support</span>
+</div>
+<div class="text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:pl-2 transition-all duration-300 cursor-pointer ease-in-out px-4 py-2 flex items-center gap-3">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-['Inter'] text-sm">Logout</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 p-6 md:p-12 max-w-[1600px] mx-auto w-full">
+<header class="mb-10">
+<h1 class="font-display-lg text-display-lg text-primary mb-2">Catch Logging</h1>
+<p class="font-body-md text-body-md text-slate-500">Document your harvest with precision for real-time stock analytics.</p>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Form Section (Left) -->
+<div class="lg:col-span-5 bg-white rounded-xl shadow-[0_4px_15px_rgba(0,43,73,0.06)] border border-slate-100 overflow-hidden">
+<div class="p-8">
+<div class="flex items-center gap-3 mb-8">
+<div class="h-10 w-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined" data-icon="edit_note">edit_note</span>
+</div>
+<h2 class="font-title-sm text-title-sm text-primary">New Harvest Entry</h2>
+</div>
+<form class="space-y-6">
+<div>
+<label class="block font-label-bold text-label-bold text-slate-500 uppercase mb-2">Fish Species</label>
+<div class="relative">
+<select class="w-full h-12 bg-surface-container-low border-none rounded-lg px-4 font-body-md text-primary appearance-none focus:ring-2 focus:ring-secondary transition-all">
+<option>Yellowfin Tuna</option>
+<option>Atlantic Cod</option>
+<option>Pacific Mackerel</option>
+<option>Swordfish</option>
+<option>Red Snapper</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-3 text-slate-400 pointer-events-none" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="block font-label-bold text-label-bold text-slate-500 uppercase mb-2">Quantity (kg)</label>
+<input class="w-full h-12 bg-surface-container-low border-none rounded-lg px-4 font-data-mono text-primary focus:ring-2 focus:ring-secondary transition-all" placeholder="0.00" type="number"/>
+</div>
+<div>
+<label class="block font-label-bold text-label-bold text-slate-500 uppercase mb-2">Specimen Count</label>
+<input class="w-full h-12 bg-surface-container-low border-none rounded-lg px-4 font-data-mono text-primary focus:ring-2 focus:ring-secondary transition-all" placeholder="0" type="number"/>
+</div>
+</div>
+<div>
+<label class="block font-label-bold text-label-bold text-slate-500 uppercase mb-2">Location Coordinates</label>
+<div class="flex gap-2">
+<div class="flex-1 relative">
+<input class="w-full h-12 bg-surface-container-low border-none rounded-lg pl-10 pr-4 font-data-mono text-primary focus:ring-2 focus:ring-secondary transition-all" type="text" value="34°05'N 118°24'W"/>
+<span class="material-symbols-outlined absolute left-3 top-3 text-slate-400 text-sm" data-icon="location_on">location_on</span>
+</div>
+<button class="h-12 w-12 bg-secondary-container text-on-secondary-container rounded-lg flex items-center justify-center hover:bg-secondary-fixed transition-colors" type="button">
+<span class="material-symbols-outlined" data-icon="my_location">my_location</span>
+</button>
+</div>
+</div>
+<div>
+<label class="block font-label-bold text-label-bold text-slate-500 uppercase mb-2">Notes</label>
+<textarea class="w-full bg-surface-container-low border-none rounded-lg p-4 font-body-sm text-primary focus:ring-2 focus:ring-secondary transition-all" placeholder="Environmental conditions, gear used..." rows="3"></textarea>
+</div>
+<div class="pt-4">
+<button class="w-full bg-primary text-white h-14 rounded-xl font-bold flex items-center justify-center gap-3 shadow-lg hover:shadow-xl active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined" data-icon="save">save</span>
+                                    Submit Log Entry
+                                </button>
+</div>
+</form>
+</div>
+</div>
+<!-- History Section (Right) -->
+<div class="lg:col-span-7 space-y-6">
+<div class="flex items-center justify-between">
+<h2 class="font-title-sm text-title-sm text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="history">history</span>
+                            Recent Logs
+                        </h2>
+<button class="text-secondary font-label-bold uppercase flex items-center gap-1 hover:underline">
+                            Export CSV <span class="material-symbols-outlined text-sm" data-icon="download">download</span>
+</button>
+</div>
+<!-- Log History Cards -->
+<div class="space-y-4">
+<!-- Card 1 -->
+<div class="bg-white p-6 rounded-xl shadow-[0_4px_15px_rgba(0,43,73,0.06)] border border-slate-100 flex flex-col md:flex-row md:items-center justify-between gap-6 hover:border-secondary transition-colors group">
+<div class="flex items-center gap-5">
+<div class="h-16 w-16 rounded-lg bg-surface-container-low overflow-hidden flex-shrink-0">
+<img alt="Yellowfin Tuna" class="w-full h-full object-cover" data-alt="close up of a freshly caught yellowfin tuna showing its metallic scales and vibrant colors on a wooden deck" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnpUFrLIEYm--kSNti2X9QP90-KY9-OirJQHZGwr96FoD2MLy6JZoArJ8hd-WCCR_7ADYJE9bQR8JQeydm09ZLfKDBVnRLFCypMdnZ7ftX_LYdVsm83M2D-epPcqIttF1wASdKmdXKMIqawf6YPp_bCo4sd5y60sb1HkmFZwYLQr4vvDClT7TgzGCgTMvr8hBhz6zMbnrVKvcbJyf69FEorG52e8MDjZieZQ84JJrk7prZKH0VDjs8bvPZTURxOQ3BQ3RzzaOt"/>
+</div>
+<div>
+<div class="font-title-sm text-primary group-hover:text-secondary transition-colors">Yellowfin Tuna</div>
+<div class="flex items-center gap-3 mt-1">
+<span class="font-data-mono text-xs text-slate-400 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="calendar_today">calendar_today</span> Oct 24, 2023
+                                        </span>
+<span class="font-data-mono text-xs text-slate-400 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="schedule">schedule</span> 05:30 AM
+                                        </span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-8 border-t md:border-t-0 pt-4 md:pt-0">
+<div class="text-right">
+<div class="font-label-bold text-slate-400 uppercase">Weight</div>
+<div class="font-data-mono text-lg text-primary font-bold">1,240 kg</div>
+</div>
+<div class="text-right">
+<div class="font-label-bold text-slate-400 uppercase">Location</div>
+<div class="font-data-mono text-sm text-primary">Zone A-12</div>
+</div>
+<button class="h-10 w-10 flex items-center justify-center text-slate-300 hover:text-error transition-colors">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-white p-6 rounded-xl shadow-[0_4px_15px_rgba(0,43,73,0.06)] border border-slate-100 flex flex-col md:flex-row md:items-center justify-between gap-6 hover:border-secondary transition-colors group">
+<div class="flex items-center gap-5">
+<div class="h-16 w-16 rounded-lg bg-surface-container-low overflow-hidden flex-shrink-0">
+<img alt="Atlantic Cod" class="w-full h-full object-cover" data-alt="a stack of fresh atlantic cod on ice in a commercial fishing market, cold atmosphere, professional lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAYQ4zDSjGT5urtdjx5tNgZOTeRmZ7PG6R-6PyZR-c87eGfoIL5v3fYw_lREGyzDGZOfQQTt7u-RrVn-D43loWeUFUvTY0TbEFHV5B4BLU9eZrs4UlLO0o4gbzfatV7p5qCByV3JdTHXEPrmh5kGl7-8NvchWIXy1zd0eV6YgURbB-c7LNicp0v551THgWdZVtJv4OcCsFqkaKUXfG7v8MibiPKETJwv1fm0G04g0I-vZx5q6xbH0EdkjRidWi2135Ne6wTsaW"/>
+</div>
+<div>
+<div class="font-title-sm text-primary group-hover:text-secondary transition-colors">Atlantic Cod</div>
+<div class="flex items-center gap-3 mt-1">
+<span class="font-data-mono text-xs text-slate-400 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="calendar_today">calendar_today</span> Oct 23, 2023
+                                        </span>
+<span class="font-data-mono text-xs text-slate-400 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="schedule">schedule</span> 14:15 PM
+                                        </span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-8 border-t md:border-t-0 pt-4 md:pt-0">
+<div class="text-right">
+<div class="font-label-bold text-slate-400 uppercase">Weight</div>
+<div class="font-data-mono text-lg text-primary font-bold">850 kg</div>
+</div>
+<div class="text-right">
+<div class="font-label-bold text-slate-400 uppercase">Location</div>
+<div class="font-data-mono text-sm text-primary">Zone B-04</div>
+</div>
+<button class="h-10 w-10 flex items-center justify-center text-slate-300 hover:text-error transition-colors">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-white p-6 rounded-xl shadow-[0_4px_15px_rgba(0,43,73,0.06)] border border-slate-100 flex flex-col md:flex-row md:items-center justify-between gap-6 hover:border-secondary transition-colors group">
+<div class="flex items-center gap-5">
+<div class="h-16 w-16 rounded-lg bg-surface-container-low overflow-hidden flex-shrink-0">
+<img alt="Swordfish" class="w-full h-full object-cover" data-alt="close up of a swordfish bill and head being handled by a fisherman on a boat, dramatic lighting, high contrast" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRHYmSQti2rp-ngomrYZiAHjSp0J_tWcfWvZbuEV-qgNdqkxzAGW8tj1dqfq_x3SKNdSmo1ChUmBC8LZYndZ-SGhZOPtrlwHpXVMRDs-UtVFbJFI4TZQGghW763ztOA4CTmP9qWpMYShOg8rUPTOYHX8E-99EjuY0Gef0cXMZO4AvZTsc5XtuYu_Vgm5prhTNby0hXvvVQtjlVgTetYCFYLZh7tnJq_fdxomN3ZfR0Eq_ASBLQzCD4EMXmU8_nLTHfssrbSf8x"/>
+</div>
+<div>
+<div class="font-title-sm text-primary group-hover:text-secondary transition-colors">Swordfish</div>
+<div class="flex items-center gap-3 mt-1">
+<span class="font-data-mono text-xs text-slate-400 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="calendar_today">calendar_today</span> Oct 22, 2023
+                                        </span>
+<span class="font-data-mono text-xs text-slate-400 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="schedule">schedule</span> 22:40 PM
+                                        </span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-8 border-t md:border-t-0 pt-4 md:pt-0">
+<div class="text-right">
+<div class="font-label-bold text-slate-400 uppercase">Weight</div>
+<div class="font-data-mono text-lg text-primary font-bold">320 kg</div>
+</div>
+<div class="text-right">
+<div class="font-label-bold text-slate-400 uppercase">Location</div>
+<div class="font-data-mono text-sm text-primary">Deep Zone 7</div>
+</div>
+<button class="h-10 w-10 flex items-center justify-center text-slate-300 hover:text-error transition-colors">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+<!-- Load More -->
+<button class="w-full py-4 border-2 border-dashed border-slate-200 rounded-xl text-slate-400 font-label-bold uppercase hover:bg-slate-50 hover:text-primary transition-all">
+                            View Full Archive
+                        </button>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- BottomNavBar -->
+<nav class="lg:hidden fixed bottom-0 w-full rounded-t-2xl z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-lg border-t border-slate-100 dark:border-slate-800 shadow-[0_-4px_20px_rgba(0,0,0,0.1)] flex justify-around items-center px-4 pb-safe pt-2 h-20">
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 opacity-70 active:bg-slate-100 dark:active:bg-slate-800 touch-none transition-transform">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-[10px] font-bold uppercase font-['Inter']">Dash</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 opacity-70 active:bg-slate-100 dark:active:bg-slate-800 touch-none transition-transform">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+<span class="text-[10px] font-bold uppercase font-['Inter']">Map</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#002B49] dark:text-sky-400 scale-110 active:bg-slate-100 dark:active:bg-slate-800 touch-none transition-transform">
+<span class="material-symbols-outlined" data-icon="list_alt">list_alt</span>
+<span class="text-[10px] font-bold uppercase font-['Inter']">Logs</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 opacity-70 active:bg-slate-100 dark:active:bg-slate-800 touch-none transition-transform">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+<span class="text-[10px] font-bold uppercase font-['Inter']">AI</span>
+</div>
+</nav>
+</body></html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Login | PFZ Predict</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Work+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary": "#2c0800",
+                        "on-tertiary-fixed": "#380c00",
+                        "on-primary-container": "#7293b6",
+                        "tertiary-fixed": "#ffdbcf",
+                        "primary-fixed-dim": "#a8caef",
+                        "on-tertiary-fixed-variant": "#822800",
+                        "surface-container-highest": "#e0e3e5",
+                        "secondary-container": "#76f3ea",
+                        "surface-container-lowest": "#ffffff",
+                        "surface": "#f7f9fb",
+                        "surface-bright": "#f7f9fb",
+                        "on-tertiary-container": "#e66c3f",
+                        "error-container": "#ffdad6",
+                        "surface-container-low": "#f2f4f6",
+                        "secondary": "#006a65",
+                        "surface-variant": "#e0e3e5",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "primary": "#001629",
+                        "outline-variant": "#c3c7ce",
+                        "tertiary-container": "#4f1500",
+                        "surface-dim": "#d8dadc",
+                        "error": "#ba1a1a",
+                        "on-secondary-container": "#006f69",
+                        "on-surface-variant": "#42474d",
+                        "outline": "#73777e",
+                        "secondary-fixed-dim": "#59dad1",
+                        "surface-tint": "#406182",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#00504c",
+                        "on-tertiary": "#ffffff",
+                        "inverse-primary": "#a8caef",
+                        "on-background": "#191c1e",
+                        "surface-container": "#eceef0",
+                        "on-surface": "#191c1e",
+                        "primary-container": "#002b49",
+                        "inverse-on-surface": "#eff1f3",
+                        "secondary-fixed": "#79f6ed",
+                        "inverse-surface": "#2d3133",
+                        "on-secondary-fixed": "#00201e",
+                        "tertiary-fixed-dim": "#ffb59c",
+                        "primary-fixed": "#cfe5ff",
+                        "surface-container-high": "#e6e8ea",
+                        "on-primary-fixed-variant": "#274969",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed": "#001d34",
+                        "background": "#f7f9fb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "20px",
+                        "margin": "24px",
+                        "xs": "8px",
+                        "sm": "16px",
+                        "md": "24px",
+                        "lg": "32px",
+                        "base": "4px",
+                        "xl": "48px"
+                    },
+                    "fontFamily": {
+                        "title-sm": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "data-mono": ["Work Sans"],
+                        "label-bold": ["Work Sans"],
+                        "body-sm": ["Inter"],
+                        "display-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "title-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "data-mono": ["14px", {"lineHeight": "20px", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                        "label-bold": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .ocean-bg {
+            background: linear-gradient(135deg, #001629 0%, #002b49 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .ocean-texture {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.15;
+            pointer-events: none;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+    </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface min-h-screen flex flex-col">
+<!-- Top Navigation Bar (Suppressed for Login per rule, but following Brand Identity) -->
+<header class="bg-white/95 backdrop-blur-sm border-b border-slate-200 shadow-[0_4px_15px_rgba(0,43,73,0.06)] fixed top-0 left-0 right-0 z-40">
+<div class="flex justify-between items-center w-full px-6 h-16 max-w-7xl mx-auto">
+<div class="flex items-center gap-2">
+<span class="text-xl font-black text-[#002B49] uppercase tracking-wider">PFZ Predict</span>
+</div>
+<div class="flex items-center gap-4">
+<a class="text-slate-500 font-medium hover:text-[#002B49] transition-all" href="#">Support</a>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-grow flex items-center justify-center p-margin ocean-bg mt-16 relative">
+<div class="ocean-texture"></div>
+<!-- Decorative Elements for Maritime Feel -->
+<div class="absolute inset-0 overflow-hidden pointer-events-none">
+<div class="absolute -top-24 -left-24 w-96 h-96 bg-secondary/10 rounded-full blur-3xl"></div>
+<div class="absolute -bottom-24 -right-24 w-96 h-96 bg-primary-fixed-dim/10 rounded-full blur-3xl"></div>
+</div>
+<!-- Login Card -->
+<div class="w-full max-w-md z-10">
+<div class="bg-white rounded-xl shadow-[0_4px_15px_rgba(0,43,73,0.06)] p-lg border border-primary-container/5">
+<div class="text-center mb-lg">
+<h1 class="font-display-lg text-display-lg text-primary mb-xs">Welcome Back</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Access your maritime intelligence dashboard</p>
+</div>
+<form class="space-y-md">
+<!-- Email Field -->
+<div class="space-y-xs">
+<label class="font-label-bold text-label-bold text-on-surface-variant flex items-center gap-2" for="email">
+<span class="material-symbols-outlined text-[18px]">mail</span>
+                            EMAIL ADDRESS
+                        </label>
+<input class="w-full px-md py-sm rounded-lg border border-outline-variant bg-surface-container-lowest focus:ring-2 focus:ring-secondary focus:border-secondary outline-none transition-all font-body-md text-on-surface" id="email" name="email" placeholder="captain@vessel-id.com" required="" type="email"/>
+</div>
+<!-- Password Field -->
+<div class="space-y-xs">
+<div class="flex justify-between items-center">
+<label class="font-label-bold text-label-bold text-on-surface-variant flex items-center gap-2" for="password">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+                                PASSWORD
+                            </label>
+<a class="font-label-bold text-label-bold text-secondary hover:underline" href="#">FORGOT?</a>
+</div>
+<input class="w-full px-md py-sm rounded-lg border border-outline-variant bg-surface-container-lowest focus:ring-2 focus:ring-secondary focus:border-secondary outline-none transition-all font-body-md text-on-surface" id="password" name="password" placeholder="••••••••" required="" type="password"/>
+</div>
+<!-- Action Button -->
+<button class="w-full bg-primary-container text-white py-sm rounded-lg font-title-sm text-title-sm shadow-lg hover:bg-primary transition-all active:scale-95 duration-200 flex items-center justify-center gap-2 mt-lg" type="submit">
+                        Login to Dashboard
+                        <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</form>
+<!-- Footnote / Registration Link -->
+<div class="mt-lg pt-lg border-t border-surface-container-high text-center">
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                        New vessel in the fleet? 
+                        <a class="text-secondary font-label-bold text-label-bold ml-1 hover:underline" href="#">REGISTER NOW</a>
+</p>
+</div>
+</div>
+<!-- Trust Indicator / Branding -->
+<div class="mt-md flex justify-center items-center gap-gutter opacity-60">
+<img alt="NOAA Verified" class="h-6 grayscale contrast-125" data-alt="monochrome logo of a maritime weather organization on a dark blue background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQDOCkV3j_7FkryY0B4P0DPZA3_hmWUDBaVJRrr-FgCLim4iKsnNoTYTeESsLC_LBFAIRmRzqXJ8TRqPzi49A9uvxVJ5YMH6QjD6PRtUChQLl62eZIh7ZOlrCUDmJmFSCHTbvpuOeMYaks9oppVsndrw67bE6ccHCgbpkqM-llqHROy8QhLCw0EhWtqoNJuqQfewKci2oNI_x3BNCazHBtap8b8V4nvDfRXu7b8LQR3XJ74_aTTdXKnR-H3T0YirUmc5ajvgTC"/>
+<img alt="Powered by AI" class="h-6 grayscale contrast-125" data-alt="minimalist logo for an artificial intelligence technology company focusing on marine data" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGSg8S19Y_cNIoBTboJp5qFJpOBTAsaArrFH9HgzltAjHEbgnh5y0QFEQpUlIcuB8g-wrjLO9EDHq69_musOx7iVcqi713TzjFlKqhCFGivG24Vq2NJRxLu2KPFMHhpgATDJ3D22yB5TjxqzAEfb_EYQFD75rFk6GOGqwO0ECP5458mp8MnC9Wv9ra8w3UtzloaDHGIl1Ix1WfBFnWQt0nrMKHQSwP5NVri0zT9Xu8YhE6Uq7sOl4k1-r0GXa8MSnrt4HUYpvv"/>
+</div>
+</div>
+</main>
+<!-- Simple Footer for Transactional Page -->
+<footer class="py-md text-center bg-primary-container">
+<div class="max-w-7xl mx-auto px-margin flex flex-col md:flex-row justify-between items-center gap-sm">
+<p class="font-label-bold text-label-bold text-on-primary-container">© 2024 PFZ PREDICT. ALL MARITIME DATA SECURED.</p>
+<div class="flex gap-md text-on-primary-container">
+<a class="font-label-bold text-label-bold hover:text-secondary-fixed transition-colors" href="#">PRIVACY POLICY</a>
+<a class="font-label-bold text-label-bold hover:text-secondary-fixed transition-colors" href="#">TERMS OF SERVICE</a>
+</div>
+</div>
+</footer>
+</body></html>

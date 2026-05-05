@@ -1,0 +1,96 @@
+State,Location,Latitude,Longitude,Safety_Rating
+Gujarat,Jafrabad,20.8672,71.3658,Medium
+Gujarat,Veraval,20.9018,70.363,Medium
+Gujarat,Mangrol,21.1215,70.113,Medium
+Gujarat,Vanakbara,20.7011,70.9022,Medium
+Gujarat,Kotada,20.7588,70.9575,Medium
+Gujarat,Okha,22.4636,69.0691,Medium
+Gujarat,Porbandar,21.6422,69.6093,Medium
+Gujarat,Chorwad,21.0022,70.2158,Medium
+Maharashtra,Dahanu,19.9926,72.7303,Danger
+Maharashtra,Alibag,18.6417,72.8722,Danger
+Maharashtra,Versova,19.1351,72.8118,Danger
+Maharashtra,New Ferry Wharf,18.9555,72.8505,Danger
+Maharashtra,Dabhol,17.5855,73.1755,Danger
+Maharashtra,Sakharinate,16.5925,73.3444,Danger
+Maharashtra,Ratnagiri (Mirkarwada),16.9944,73.2844,Danger
+Maharashtra,Malvan,16.06,73.46,Danger
+Maharashtra,Arnala,19.458,72.7483,Danger
+Maharashtra,Vasai,19.33,72.81,Danger
+Maharashtra,Uttan,19.28,72.78,Danger
+Maharashtra,Devgad,16.375,73.375,Danger
+Maharashtra,Harne,17.813,73.091,Danger
+Maharashtra,Sassoon dock,18.9145,72.8255,Danger
+Maharashtra,Satpati,19.7215,72.7032,Danger
+Goa,Vasco,15.3959,73.8112,Good
+Goa,Chapora,15.6053,73.7408,Good
+Goa,Malim,15.5034,73.8277,Good
+Goa,Cutbona,15.1583,73.9531,Good
+Karnataka,Bhatkal,13.97,74.54,Good
+Karnataka,Belekeri,14.71,74.26,Good
+Karnataka,Amdalli,14.75,74.19,Good
+Karnataka,Karwar,14.82,74.13,Good
+Karnataka,Malpe,13.35,74.7,Good
+Karnataka,Mangalore,12.87,74.83,Good
+Karnataka,Gangolli,13.645,74.67,Good
+Karnataka,Honnavar,14.28,74.44,Good
+Karnataka,Tadri,14.53,74.36,Good
+Kerala,Koyilandi,11.44,75.69,Good
+Kerala,Cheruvathur,12.21,75.15,Good
+Kerala,Mopla Bay,11.86,75.38,Good
+Kerala,Azheekkal,11.94,75.3,Good
+Kerala,Neendakara,8.938,76.54,Good
+Kerala,Vaadi,8.88,76.57,Good
+Kerala,Port Kollam,8.88,76.58,Good
+Kerala,Chellanam,9.83,76.28,Good
+Kerala,Ponnani,10.77,75.92,Good
+Kerala,Munakkakadavu,10.58,76.02,Good
+Kerala,Chettuva,10.52,76.04,Good
+Kerala,Vypin,9.98,76.24,Good
+Kerala,Munambam,10.18,76.17,Good
+Kerala,Thoppumpady,9.93,76.26,Good
+Kerala,Puthiyappa,11.3,75.76,Good
+Kerala,Beypore,11.16,75.8,Good
+Kerala,Kayamkulam,9.15,76.46,Good
+Kerala,Thottappally,9.31,76.38,Good
+Kerala,Vizhinjam,8.37,76.99,Danger
+Kerala,Sakthikulangara,8.93,76.55,Good
+Tamil Nadu,Karaikal,10.92,79.84,Medium
+Tamil Nadu,Pondicherry,11.94,79.8,Medium
+Tamil Nadu,Pulicat,13.41,80.32,Medium
+Tamil Nadu,Mudasaloodai,11.51,79.76,Medium
+Tamil Nadu,Poombuhar,11.14,79.85,Medium
+Tamil Nadu,Kodiyakarai,10.27,79.85,Medium
+Tamil Nadu,Mallipattinam,10.28,79.31,Medium
+Tamil Nadu,Thengaipattinam,8.23,77.16,Medium
+Tamil Nadu,Rameshvaram,9.28,79.31,Medium
+Tamil Nadu,Jagathapattinam,9.93,79.19,Medium
+Tamil Nadu,Kottaipattinam,9.98,79.19,Medium
+Tamil Nadu,Chinnamuttom,8.09,77.56,Medium
+Tamil Nadu,Tharuvaikulam,8.89,78.16,Medium
+Tamil Nadu,Tuticorin,8.79,78.13,Medium
+Tamil Nadu,Colachel,8.17,77.25,Medium
+Tamil Nadu,Chennai,13.08,80.27,Medium
+Tamil Nadu,Cuddalore,11.75,79.76,Medium
+Tamil Nadu,Mandapam,9.28,79.12,Medium
+Tamil Nadu,Nagapattinam,10.76,79.84,Medium
+Tamil Nadu,Pazhayar,11.35,79.83,Medium
+Andhra Pradesh,Pudimadaka,17.49,83.0,Medium
+Andhra Pradesh,Vodarevu,15.79,80.48,Medium
+Andhra Pradesh,Viskhapatnam,17.68,83.21,Medium
+Andhra Pradesh,Kakinada,16.98,82.24,Medium
+Andhra Pradesh,Nizampatnam,15.9,80.67,Medium
+Andhra Pradesh,Machilipatnam,16.18,81.13,Medium
+Andhra Pradesh,Yanam,16.73,82.21,Medium
+Odisha,Balugaon,19.74,85.2,Danger
+Odisha,Paradeep,20.27,86.66,Danger
+Odisha,Bahabalpur,21.56,87.06,Danger
+Odisha,Balramgadi,21.46,87.04,Danger
+Odisha,Dhamara,21.01,86.96,Danger
+West Bengal,Digha Sankarpur,21.62,87.5,Danger
+West Bengal,Freserganj,21.58,88.24,Danger
+West Bengal,Kakdwip,21.87,88.18,Danger
+West Bengal,Soula,21.65,87.65,Danger
+West Bengal,Namkhana,21.76,88.23,Danger
+West Bengal,Raidighi,22.0,88.43,Danger
+West Bengal,Deshpran (Petua Ghat),21.78,87.82,Danger

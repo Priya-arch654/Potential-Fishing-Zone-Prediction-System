@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Captain's Cabin | Captain Abyss</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .chat-bubble { border-radius: 1.5rem; padding: 1rem 1.5rem; max-width: 85%; line-height: 1.6; }
+        .user-bubble { background: #002B49; color: white; border-bottom-right-radius: 0.25rem; }
+        .captain-bubble { background: #f1f5f9; color: #1e293b; border-bottom-left-radius: 0.25rem; border: 1px solid #e2e8f0; }
+        .markdown-content ul { list-style-type: disc; margin-left: 1.5rem; margin-top: 0.5rem; }
+        .markdown-content li { margin-bottom: 0.25rem; }
+    </style>
+</head>
+<body class="bg-slate-50 font-body-md text-slate-900">
+    <header class="bg-white border-b border-slate-200 h-16 fixed top-0 w-full z-50 flex items-center justify-between px-6 shadow-sm">
+        <div class="flex items-center gap-4">
+            <a href="{{ url_for('dashboard') }}" class="text-slate-500 hover:text-primary transition-all">
+                <span class="material-symbols-outlined">arrow_back</span>
+            </a>
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-[#002B49] rounded-full flex items-center justify-center text-white">
+                    <span class="material-symbols-outlined">anchor</span>
+                </div>
+                <div>
+                    <h1 class="font-bold text-sm">Captain Abyss</h1>
+                    <p class="text-[10px] text-green-600 font-bold uppercase tracking-widest flex items-center gap-1">
+                        <span class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span> Scanning Depths
+                    </p>
+                </div>
+            </div>
+        </div>
+        <nav class="hidden md:flex gap-6">
+            <a class="text-slate-500 text-sm font-medium hover:text-[#002B49]" href="{{ url_for('dashboard') }}">Dashboard</a>
+            <a class="text-slate-500 text-sm font-medium hover:text-[#002B49]" href="{{ url_for('map_view') }}">Map</a>
+            <a class="text-[#002B49] text-sm font-bold border-b-2 border-[#002B49] pb-1" href="#">AI Cabin</a>
+        </nav>
+    </header>
+
+    <main class="pt-16 h-screen flex flex-col max-w-4xl mx-auto bg-white border-x shadow-2xl">
+        <!-- Chat Area -->
+        <div id="chat-container" class="flex-1 overflow-y-auto p-6 space-y-6">
+            <div class="flex flex-col items-center py-10 text-center">
+                <div class="w-20 h-20 bg-slate-100 rounded-full flex items-center justify-center mb-4">
+                    <span class="material-symbols-outlined text-4xl text-[#002B49]">sailing</span>
+                </div>
+                <h2 class="text-xl font-bold">The Abyss Awaits</h2>
+                <p class="text-slate-500 text-sm max-w-xs mt-2">Ahoy! I'm Captain Abyss. I've explored the deepest parts of our oceans. How can I guide you today? ⚓</p>
+            </div>
+        </div>
+
+        <!-- Input Area -->
+        <div class="p-6 bg-slate-50 border-t">
+            <form id="chat-form" class="relative">
+                <textarea id="user-input" rows="1" class="w-full bg-white border border-slate-200 rounded-2xl py-4 pl-6 pr-16 focus:ring-2 focus:ring-primary outline-none resize-none shadow-sm" placeholder="Speak to the Abyss..."></textarea>
+                <button type="submit" class="absolute right-3 top-3 bg-[#002B49] text-white w-10 h-10 rounded-xl flex items-center justify-center hover:scale-105 transition-all shadow-lg">
+                    <span class="material-symbols-outlined">send</span>
+                </button>
+            </form>
+            <p class="text-[10px] text-center text-slate-400 mt-4 uppercase font-bold tracking-widest">Powered by Llama 3.3 Intelligence</p>
+        </div>
+    </main>
+
+    <script>
+        const chatContainer = document.getElementById('chat-container');
+        const chatForm = document.getElementById('chat-form');
+        const userInput = document.getElementById('user-input');
+
+        function appendMessage(role, text) {
+            const wrapper = document.createElement('div');
+            wrapper.className = `flex ${role === 'user' ? 'justify-end' : 'justify-start'} animate-in fade-in duration-300`;
+            
+            const bubble = document.createElement('div');
+            bubble.className = `chat-bubble ${role === 'user' ? 'user-bubble' : 'captain-bubble shadow-sm'}`;
+            
+            // Format text (simple bullet points)
+            const formattedText = text.replace(/\* (.*?)\n/g, '<li>$1</li>')
+                                      .replace(/\n\n/g, '<br><br>')
+                                      .replace(/### (.*?)\n/g, '<b class="block mb-2 text-primary">$1</b>');
+            
+            bubble.innerHTML = `<div class="markdown-content">${formattedText}</div>`;
+            wrapper.appendChild(bubble);
+            chatContainer.appendChild(wrapper);
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+
+        chatForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const message = userInput.value.trim();
+            if (!message) return;
+
+            appendMessage('user', message);
+            userInput.value = '';
+            userInput.style.height = 'auto';
+
+            // Show loading
+            const loadingWrapper = document.createElement('div');
+            loadingWrapper.className = 'flex justify-start';
+            loadingWrapper.id = 'loading-bubble';
+            loadingWrapper.innerHTML = `<div class="chat-bubble captain-bubble italic text-slate-400">Captain Abyss is scanning the depths... ⚓</div>`;
+            chatContainer.appendChild(loadingWrapper);
+
+            try {
+                const response = await fetch('/api/chat', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message })
+                });
+                const data = await response.json();
+                document.getElementById('loading-bubble').remove();
+                appendMessage('captain', data.response);
+            } catch (error) {
+                document.getElementById('loading-bubble').remove();
+                appendMessage('captain', "The abyss is silent... Let me check my charts. 🌊");
+            }
+        });
+
+        userInput.addEventListener('input', function() {
+            this.style.height = 'auto';
+            this.style.height = (this.scrollHeight) + 'px';
+        });
+    </script>
+</body>
+</html>

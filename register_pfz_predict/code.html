@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PFZ Predict - Registration</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Work+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary": "#2c0800",
+                        "on-tertiary-fixed": "#380c00",
+                        "on-primary-container": "#7293b6",
+                        "tertiary-fixed": "#ffdbcf",
+                        "primary-fixed-dim": "#a8caef",
+                        "on-tertiary-fixed-variant": "#822800",
+                        "surface-container-highest": "#e0e3e5",
+                        "secondary-container": "#76f3ea",
+                        "surface-container-lowest": "#ffffff",
+                        "surface": "#f7f9fb",
+                        "surface-bright": "#f7f9fb",
+                        "on-tertiary-container": "#e66c3f",
+                        "error-container": "#ffdad6",
+                        "surface-container-low": "#f2f4f6",
+                        "secondary": "#006a65",
+                        "surface-variant": "#e0e3e5",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "primary": "#001629",
+                        "outline-variant": "#c3c7ce",
+                        "tertiary-container": "#4f1500",
+                        "surface-dim": "#d8dadc",
+                        "error": "#ba1a1a",
+                        "on-secondary-container": "#006f69",
+                        "on-surface-variant": "#42474d",
+                        "outline": "#73777e",
+                        "secondary-fixed-dim": "#59dad1",
+                        "surface-tint": "#406182",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#00504c",
+                        "on-tertiary": "#ffffff",
+                        "inverse-primary": "#a8caef",
+                        "on-background": "#191c1e",
+                        "surface-container": "#eceef0",
+                        "on-surface": "#191c1e",
+                        "primary-container": "#002b49",
+                        "inverse-on-surface": "#eff1f3",
+                        "secondary-fixed": "#79f6ed",
+                        "inverse-surface": "#2d3133",
+                        "on-secondary-fixed": "#00201e",
+                        "tertiary-fixed-dim": "#ffb59c",
+                        "primary-fixed": "#cfe5ff",
+                        "surface-container-high": "#e6e8ea",
+                        "on-primary-fixed-variant": "#274969",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed": "#001d34",
+                        "background": "#f7f9fb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "20px",
+                        "margin": "24px",
+                        "xs": "8px",
+                        "sm": "16px",
+                        "md": "24px",
+                        "lg": "32px",
+                        "base": "4px",
+                        "xl": "48px"
+                    },
+                    "fontFamily": {
+                        "title-sm": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "data-mono": ["Work Sans"],
+                        "label-bold": ["Work Sans"],
+                        "body-sm": ["Inter"],
+                        "display-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "title-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "data-mono": ["14px", {"lineHeight": "20px", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                        "label-bold": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .ocean-gradient-overlay {
+            background: linear-gradient(135deg, rgba(0, 22, 41, 0.9) 0%, rgba(0, 43, 73, 0.7) 100%);
+        }
+    </style>
+</head>
+<body class="bg-background font-body-md text-on-surface selection:bg-secondary-container selection:text-on-secondary-container">
+<div class="min-h-screen flex flex-col lg:flex-row">
+<!-- Visual Sidebar: Brand Experience -->
+<div class="hidden lg:flex lg:w-1/2 relative overflow-hidden bg-primary-container items-center justify-center p-xl">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-60" data-alt="Deep ocean waves at twilight with sunlight piercing through the water surface creating ethereal rays of light and calm blue tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgiSSewLdaug8pkJa2eQKndmcoxmEmT6kOCzR5G7h9OJ-zEXrpwH2sJMir7FI79tAT-0I9IAjr_0ATpD1BntmaftOWIoXny6TK187JDM2uSBRKgdxSuIAtzyl8MqWsR8hCO9jeOLKNYpbZUFNdlbbdQDI8naITDt4GjmgFmZ0QNSJDpiCbueAOqdMY-DMV-X5-WEV-7w3eZlGe7hCAqJyT0iV8UXvgfDALPc9dQNAH82YeW7kXK03zv1y4pxPhQK9Is4ZbjMsD"/>
+<div class="absolute inset-0 ocean-gradient-overlay"></div>
+</div>
+<div class="relative z-10 max-w-lg text-center lg:text-left">
+<div class="mb-lg">
+<span class="font-title-sm text-secondary-fixed bg-secondary-fixed/10 px-sm py-xs rounded-lg uppercase tracking-widest text-[10px]">Maritime Excellence</span>
+</div>
+<h1 class="font-display-lg text-white mb-md leading-tight">Chart Your Course with AI Precision.</h1>
+<p class="font-body-md text-on-primary-container mb-lg">Access real-time PFZ predictions and maritime data intelligence. Join thousands of mariners optimizing their catch with professional-grade predictive modeling.</p>
+<div class="grid grid-cols-2 gap-md">
+<div class="p-md bg-white/5 backdrop-blur-md rounded-xl border border-white/10">
+<span class="material-symbols-outlined text-secondary-fixed mb-xs" data-icon="insights">insights</span>
+<h3 class="font-title-sm text-white text-sm">Real-time Analytics</h3>
+</div>
+<div class="p-md bg-white/5 backdrop-blur-md rounded-xl border border-white/10">
+<span class="material-symbols-outlined text-secondary-fixed mb-xs" data-icon="tsunami">tsunami</span>
+<h3 class="font-title-sm text-white text-sm">Depth Analysis</h3>
+</div>
+</div>
+</div>
+</div>
+<!-- Registration Form Section -->
+<main class="flex-1 flex items-center justify-center p-margin md:p-xl bg-surface relative">
+<div class="w-full max-w-md">
+<!-- Mobile Branding -->
+<div class="lg:hidden mb-lg flex flex-col items-center">
+<div class="w-16 h-16 bg-primary-container rounded-2xl flex items-center justify-center mb-md shadow-lg shadow-primary-container/20">
+<span class="material-symbols-outlined text-secondary-fixed text-4xl" data-icon="waves">waves</span>
+</div>
+<h2 class="font-headline-md text-primary-container">PFZ Predict</h2>
+</div>
+<!-- Form Card -->
+<div class="bg-white p-lg rounded-xl shadow-[0_4px_15px_rgba(0,43,73,0.06)] border border-outline-variant/30">
+<header class="mb-lg">
+<h2 class="font-headline-md text-primary mb-xs">Create Account</h2>
+<p class="font-body-sm text-on-surface-variant">Enter your details to start monitoring the seas.</p>
+</header>
+<form class="space-y-md">
+<!-- Name Field -->
+<div class="space-y-xs">
+<label class="font-label-bold text-on-surface-variant uppercase" for="full-name">Full Name</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-sm flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline text-sm" data-icon="person">person</span>
+</div>
+<input class="w-full pl-xl pr-md py-sm bg-surface-container-lowest border border-outline-variant rounded-lg focus:ring-2 focus:ring-secondary/20 focus:border-secondary outline-none transition-all font-body-md text-on-surface placeholder:text-outline/50" id="full-name" name="name" placeholder="Enter your full name" type="text"/>
+</div>
+</div>
+<!-- Email Field -->
+<div class="space-y-xs">
+<label class="font-label-bold text-on-surface-variant uppercase" for="email-address">Vessel Email</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-sm flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline text-sm" data-icon="mail">mail</span>
+</div>
+<input class="w-full pl-xl pr-md py-sm bg-surface-container-lowest border border-outline-variant rounded-lg focus:ring-2 focus:ring-secondary/20 focus:border-secondary outline-none transition-all font-body-md text-on-surface placeholder:text-outline/50" id="email-address" name="email" placeholder="captain@mariner.com" type="email"/>
+</div>
+</div>
+<!-- Password Field -->
+<div class="space-y-xs">
+<label class="font-label-bold text-on-surface-variant uppercase" for="user-password">Secure Password</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-sm flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline text-sm" data-icon="lock">lock</span>
+</div>
+<input class="w-full pl-xl pr-md py-sm bg-surface-container-lowest border border-outline-variant rounded-lg focus:ring-2 focus:ring-secondary/20 focus:border-secondary outline-none transition-all font-body-md text-on-surface placeholder:text-outline/50" id="user-password" name="password" placeholder="••••••••••••" type="password"/>
+</div>
+<p class="text-[10px] text-outline px-xs">Minimum 8 characters with numbers and symbols.</p>
+</div>
+<!-- Terms -->
+<div class="flex items-start gap-sm pt-xs">
+<input class="mt-1 w-4 h-4 rounded border-outline-variant text-secondary focus:ring-secondary" id="terms" type="checkbox"/>
+<label class="font-body-sm text-on-surface-variant" for="terms">
+                                I agree to the <a class="text-secondary font-medium hover:underline" href="#">Terms of Service</a> and <a class="text-secondary font-medium hover:underline" href="#">Maritime Privacy Protocol</a>.
+                            </label>
+</div>
+<!-- Large Action Button -->
+<button class="w-full bg-primary-container text-white py-md rounded-xl font-title-sm hover:bg-primary transition-all shadow-lg shadow-primary-container/20 flex items-center justify-center gap-sm active:scale-[0.98]" type="submit">
+<span>Launch Dashboard</span>
+<span class="material-symbols-outlined" data-icon="anchor">anchor</span>
+</button>
+</form>
+<!-- Divider -->
+<div class="relative my-lg">
+<div class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-outline-variant/30"></div>
+</div>
+<div class="relative flex justify-center">
+<span class="bg-white px-md font-label-bold text-outline text-[10px] uppercase">Fleet Login</span>
+</div>
+</div>
+<!-- Secondary Action -->
+<div class="text-center">
+<p class="font-body-sm text-on-surface-variant">
+                            Already registered? 
+                            <a class="text-secondary font-semibold hover:underline decoration-2 underline-offset-4" href="#">Log in to vessel</a>
+</p>
+</div>
+</div>
+<!-- Footer Links -->
+<footer class="mt-lg flex justify-between px-md">
+<span class="font-label-bold text-outline text-[10px] uppercase">© 2024 PFZ Predict LLC</span>
+<div class="flex gap-md">
+<a class="font-label-bold text-outline text-[10px] uppercase hover:text-secondary" href="#">Support</a>
+<a class="font-label-bold text-outline text-[10px] uppercase hover:text-secondary" href="#">System Status</a>
+</div>
+</footer>
+</div>
+</main>
+</div>
+</body></html>
